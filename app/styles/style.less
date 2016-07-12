@@ -1,0 +1,122 @@
+@import "bootstrap/less/variables.less";
+@import "bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "bootstrap/less/normalize.less";
+// @import "bootstrap/less/print.less";
+
+// Core CSS
+@import "bootstrap/less/scaffolding.less";
+@import "bootstrap/less/type.less";
+// @import "bootstrap/less/grid.less";
+
+// // Utilities
+// @import "mixins/hide-text.less";
+// @import "mixins/opacity.less";
+// @import "mixins/image.less";
+// @import "mixins/labels.less";
+// @import "mixins/reset-filter.less";
+// @import "mixins/resize.less";
+// @import "mixins/responsive-visibility.less";
+// @import "mixins/size.less";
+// @import "mixins/tab-focus.less";
+// @import "mixins/reset-text.less";
+// @import "mixins/text-emphasis.less";
+// @import "mixins/text-overflow.less";
+// @import "mixins/vendor-prefixes.less";
+
+// // Components
+// @import "mixins/alerts.less";
+// @import "mixins/buttons.less";
+// @import "mixins/panels.less";
+// @import "mixins/pagination.less";
+// @import "mixins/list-group.less";
+// @import "mixins/nav-divider.less";
+// @import "mixins/forms.less";
+// @import "mixins/progress-bar.less";
+// @import "mixins/table-row.less";
+
+// // Skins
+// @import "mixins/background-variant.less";
+// @import "mixins/border-radius.less";
+// @import "mixins/gradients.less";
+
+// // Layout
+// @import "mixins/clearfix.less";
+// @import "mixins/center-block.less";
+// @import "mixins/nav-vertical-align.less";
+// @import "mixins/grid-framework.less";
+// @import "mixins/grid.less";
+
+@gray-base:              rgb(43,58, 66);
+@gray-dark:              @gray-base;
+@font-size-base:          16px;
+@base-margin: 		0.5em;
+
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 3)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.5)); // ~24px
+
+@padding-base-horizontal: @base-margin * @line-height-small;
+@padding-base-vertical: @base-margin;
+
+.container {
+  .container-fixed();
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+.main {
+	margin: 0 auto;
+	position: relative;
+}
+
+.imgz {
+	.img-responsive();
+}
+
+.header {
+	background-color: black;
+	&-wrap {
+		&:extend( .main all );
+	}
+
+	&-title {
+		// padding: @padding-base-vertical @padding-base-horizontal;
+		position: absolute;
+		color: #fff;
+		z-index: 1;
+		bottom: 0;
+		font-weight: bold;
+	}
+
+	&-image {
+		position: relative;
+		z-index: 0;
+		&:extend( .imgz );
+	}
+}
+
+.callout {
+	text-align: center;
+	background-color: rgb(189, 212, 222);
+	&-image {
+		&:extend( .imgz );
+	}
+}
+
+.content {
+	&:extend( .main all );
+	padding: @padding-base-vertical * 2 @padding-base-horizontal * 2;
+}

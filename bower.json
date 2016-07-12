@@ -1,0 +1,29 @@
+{
+  "name": "nn-landing",
+  "description": "landing pages for NN site",
+  "main": "index.html",
+  "authors": [
+    "Richar Bailey"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "static",
+    "front-end",
+    "ui",
+    "marketing",
+    "nonsense"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-less": "*",
+    "bootstrap": "^3.3.6"
+  }
+}
