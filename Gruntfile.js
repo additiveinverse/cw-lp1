@@ -98,6 +98,17 @@ module.exports = function ( grunt ) {
       }
     },
 
+    cssmin: {
+        options: {
+            shorthandCompacting: false,
+            roundingPrecision: -1
+          },
+          target: {
+            files: {
+              "<%= config.dist.root %>style.min.css": ["<%= config.dist.root %>style.min.css"]
+            }
+          },
+      },
     combine_mq: {
       default_options: {
         expand: true,
@@ -152,6 +163,6 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "default", [ "connect", "watch" ] )
 
   // Build for Production
-  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq", "htmlmin" ] )
+  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq", "htmlmin", "cssmin" ] )
 
 }
