@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "landing pages for NN site",
   "main": "index.html",
-  "repository": "git@github.com:additiveinverse/cw-lp1.git"
+  "repository": "git@github.com:additiveinverse/cw-lp1.git",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.1",
