@@ -152,6 +152,6 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "default", [ "connect", "watch" ] )
 
   // Build for Production
-  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq" ] )
+  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq", "htmlmin" ] )
 
 }
