@@ -141,7 +141,7 @@ module.exports = function ( grunt ) {
           "Gruntfile.js",
           "<%= config.app.root %>**/*"
         ],
-        tasks: [ "pug", "less:dev" ],
+        tasks: [ "pug", "less:dev", "combine_mq" ],
         options: {
           reload: false,
           livereload: true,
