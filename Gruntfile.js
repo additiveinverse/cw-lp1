@@ -36,6 +36,12 @@ module.exports = function ( grunt ) {
           "bootstrap/less/**"
         ],
         dest: "<%= config.app.less %>"
+      },
+      favicons: {
+        expand: true,
+        flatten: true,
+        src: "<%= config.app.img %>favicons/*",
+        dest: "<%= config.dist.img %>fi/"
       }
     },
 
@@ -83,6 +89,55 @@ module.exports = function ( grunt ) {
       }
     },
 
+    realFavicon: {
+      favicons: {
+        src: "<%= config.app.img %>NN-logo-n.svg",
+        dest: "<%= config.app.img %>favicons/",
+        options: {
+          iconsPath: '/img/favs/',
+          html: "",
+          design: {
+            ios: {
+              pictureAspect: 'backgroundAndMargin',
+              backgroundColor: '#FFF',
+              margin: '14%'
+            },
+            desktopBrowser: {},
+            windows: {
+              pictureAspect: 'noChange',
+              backgroundColor: '#FFF',
+              onConflict: 'override'
+            },
+            androidChrome: {
+              pictureAspect: 'noChange',
+              themeColor: '#FFF',
+              manifest: {
+                name: 'Net Nanny',
+                display: 'browser',
+                orientation: 'notSet',
+                onConflict: 'override',
+                declared: true
+              }
+            },
+            safariPinnedTab: {
+              pictureAspect: 'blackAndWhite',
+              threshold: 58.75,
+              themeColor: '#FFF'
+            }
+          },
+          settings: {
+            compression: 4,
+            scalingAlgorithm: 'Mitchell',
+            errorOnImageTooSmall: false
+          },
+          versioning: {
+            paramName: 'v1',
+            paramValue: 'favicon'
+          }
+        }
+      }
+    },
+
     // ///////////////////////////////////////////////////////////////// minifying
     htmlmin: {
       dist: {
@@ -95,6 +150,21 @@ module.exports = function ( grunt ) {
         files: {
           "<%= config.dist.root %>index.html": "<%= config.dist.root %>index.html"
         }
+      }
+    },
+
+    imagemin: {
+      site: {
+        options: {
+          optimizationLevel: 5,
+          pngquant: true
+        },
+        files: [ {
+          expand: true,
+          cwd: "<%= config.app.img %>",
+          src: [ '*.{png,jpg,gif,svg}' ],
+          dest: "<%= config.dist.img %>"
+        } ]
       }
     },
 
@@ -141,7 +211,7 @@ module.exports = function ( grunt ) {
           "Gruntfile.js",
           "<%= config.app.root %>**/*"
         ],
-        tasks: [ "pug", "less:dev", "combine_mq" ],
+        tasks: [ "pug", "less:dev", "combine_mq", "newer:imagemin" ],
         options: {
           reload: false,
           livereload: true,
@@ -163,6 +233,6 @@ module.exports = function ( grunt ) {
   grunt.registerTask( "default", [ "connect", "watch" ] )
 
   // Build for Production
-  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq", "htmlmin", "cssmin" ] )
+  grunt.registerTask( "build", [ "copy", "pug", "less:production", "combine_mq", "htmlmin", "cssmin", "imagemin"] )
 
 }

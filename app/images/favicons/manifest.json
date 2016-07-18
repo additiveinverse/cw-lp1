@@ -1,0 +1,51 @@
+{
+	"name": "Net Nanny",
+	"icons": [
+		{
+			"src": "\/img\/favs\/android-chrome-36x36.png?v1=favicon",
+			"sizes": "36x36",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-48x48.png?v1=favicon",
+			"sizes": "48x48",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-72x72.png?v1=favicon",
+			"sizes": "72x72",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-96x96.png?v1=favicon",
+			"sizes": "96x96",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-144x144.png?v1=favicon",
+			"sizes": "144x144",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-192x192.png?v1=favicon",
+			"sizes": "192x192",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-256x256.png?v1=favicon",
+			"sizes": "256x256",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-384x384.png?v1=favicon",
+			"sizes": "384x384",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/img\/favs\/android-chrome-512x512.png?v1=favicon",
+			"sizes": "512x512",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#_f_f_f"
+}

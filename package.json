@@ -19,6 +19,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-lesslint": "^3.2.0",
     "grunt-newer": "^1.2.0",
+    "grunt-real-favicon": "^0.1.6",
     "matchdep": "^1.0.1"
   },
   "scripts": {
