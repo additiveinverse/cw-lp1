@@ -41,7 +41,7 @@ module.exports = function ( grunt ) {
         expand: true,
         flatten: true,
         src: "<%= config.app.img %>favicons/*",
-        dest: "<%= config.dist.img %>fi/"
+        dest: "<%= config.dist.root %>"
       }
     },
 
@@ -225,9 +225,6 @@ module.exports = function ( grunt ) {
   } );
 
   require( "matchdep" ).filterDev( "grunt-*" ).forEach( grunt.loadNpmTasks )
-
-  // init
-  // grunt.registerTask( "devint", [ "concat", "copy", "ngtemplates", "imgprep", "dataprep" ] )
 
   // Develop
   grunt.registerTask( "default", [ "connect", "watch" ] )
