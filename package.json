@@ -20,6 +20,7 @@
     "grunt-lesslint": "^3.2.0",
     "grunt-newer": "^1.2.0",
     "grunt-real-favicon": "^0.1.6",
+    "grunt-sftp-deploy": "^0.2.5",
     "matchdep": "^1.0.1"
   },
   "scripts": {

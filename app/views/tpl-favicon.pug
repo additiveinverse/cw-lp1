@@ -1,0 +1,18 @@
+- var icon_touch = [ 57, 60, 72, 76, 114, 120, 144, 152, 180 ]
+- var icon_fav = [ 16, 32, 96 ]
+- var caches = '?v1=favicon'
+- var favs_url = path
+
+for tc in icon_touch
+	link(rel="apple-touch-icon", sizes=tc +"x" + tc, href=favs_url + "apple-touch-icon-" + tc +"x" + tc +".png" + caches )
+
+for fc in icon_fav
+	link(rel="icon", type="image/png", sizes=fc +"x" + fc, href=favs_url + "favicon-" + tc +"x" + tc +".png" + caches )
+
+link(rel="icon", type="image/png", href=favs_url + "android-chrome-192x192.png" + caches, sizes="192x192" + caches )
+link(rel="manifest", href=favs_url + "manifest.json" + caches )
+link(rel="mask-icon", href=favs_url + "safari-pinned-tab.svg" + caches, color="#FFF")
+link(rel="shortcut icon", href=favs_url + "favicon.ico#{ caches }")
+meta(name="msapplication-TileColor", content="#FFF")
+meta(name="msapplication-TileImage", content=favs_url + "mstile-144x144.png" + caches )
+meta(name="theme-color", content="#FFF")

@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+	block vars
+		- var linkto = "http://get.netnanny.com/nn"
+		- var title = "How to Know Your Kids’ Internet Activity and Protect them from Online Dangers"
+		- var path = ""
+
+	head
+		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		meta(name="viewport", content="width=device-width, initial-scale=1", maximum-scale="1", user-scalable="0")
+		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+		link( rel="stylesheet", href=path + "style.min.css" )
+
+		include tpl-favicon
+
+		block tracking-header
+
+		title #{title}
+
+	body(lang="en")
+		.content.container.nav
+			span.nav-logo #[img( src=path + "img/besafe_logo.png", width="150px" )]
+			//- sponsored by #[img( src="/img/NN-logo.svg", width="100px" )]
+			//- p.text-right.small Scroll to bottom to learn about a special discount
+			a(href=linkto).btn.btn-primary.btn-trial.nav-btn Get Net Nanny#[sup &reg; ]
+
+		header.header
+			.header-wrap.container
+				h1.header-title #{title} <br/>
+					sup.small 	by the Net Nanny Staff
+				img.header-image( src=path + "img/header.jpg")
+
+		main.content
+			.content-wrap.container
+				block content
+
+		aside.callout
+			a(href=linkto).callout-content.content.container
+				block callout
+
+		footer.content
+			.container
+				block footer
+
+				p.small.text-center &copy; 2001-2016 Content Watch Holdings, Inc., All rights reserved.
+
+		block tracking-footer

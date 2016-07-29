@@ -138,7 +138,11 @@ module.exports = function ( grunt ) {
 				useShortDocType: true,
 				collapseWhitespace: true
 			},
-			files: subs
+			files: {
+				"<%= config.dist.root %>index.html": "<%= config.dist.root %>index.html",
+				"<%= config.dist.root %>promo/index.html": "<%= config.dist.root %>promo/index.html",
+				"<%= config.dist.root %>free/index.html": "<%= config.dist.root %>free/index.html"
+				}
 		}
 	},
 
@@ -181,6 +185,19 @@ module.exports = function ( grunt ) {
 	},
 
 	// ///////////////////////////////////////////////////////////////// build / deploy / workflow
+	'sftp-deploy': {
+		build: {
+			auth: {
+				host: 'server.com',
+				port: 22,
+				authKey: 'key1'
+			},
+			src: "<%= config.dist.root %>",
+			dest: '/path/to/destination/folder',
+			concurrency: 4,
+			progress: true
+		}
+	},
 	connect: {
 		server: {
 			options: {
