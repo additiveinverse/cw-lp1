@@ -168,9 +168,7 @@ module.exports = function ( grunt ) {
 		},
 		target: {
 			files: {
-				"<%= config.dist.root %>style.min.css": ["<%= config.dist.root %>style.min.css"],
-				"<%= config.dist.root %>promo/style.min.css": ["<%= config.dist.root %>style.min.css"],
-				"<%= config.dist.root %>free/style.min.css": ["<%= config.dist.root %>style.min.css"]
+				"<%= config.dist.root %>style.min.css": ["<%= config.dist.root %>style.min.css"]
 			}
 		},
 	},
