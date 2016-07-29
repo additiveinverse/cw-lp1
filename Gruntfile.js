@@ -1,6 +1,11 @@
 module.exports = function ( grunt ) {
 	var name = "<%= pkg.name %>-v<%= pkg.version%>"
 	var reports = "reports/<%= pkg.name %>-"
+	var subs = {
+				"<%= config.dist.root %>index.html": "<%= config.app.tpl %>index.pug",
+				"<%= config.dist.root %>promo/index.html": "<%= config.app.tpl %>index-promo.pug",
+				"<%= config.dist.root %>free/index.html": "<%= config.app.tpl %>index-free.pug"
+			}
 
 	grunt.initConfig( {
 		config: {
@@ -71,10 +76,7 @@ module.exports = function ( grunt ) {
 						debug: false
 					}
 				},
-				files: {
-					"<%= config.dist.root %>index.html": "<%= config.app.tpl %>index-1.pug",
-					"<%= config.dist.root %>free/index.html": "<%= config.app.tpl %>index-2.pug"
-				}
+				files: subs
 			}
 		},
 
@@ -136,10 +138,7 @@ module.exports = function ( grunt ) {
 				useShortDocType: true,
 				collapseWhitespace: true
 			},
-			files: {
-				"<%= config.dist.root %>index.html": "<%= config.dist.root %>index.html",
-				"<%= config.dist.root %>free/index.html": "<%= config.dist.root %>free/index.html"
-			}
+			files: subs
 		}
 	},
 
@@ -166,6 +165,7 @@ module.exports = function ( grunt ) {
 		target: {
 			files: {
 				"<%= config.dist.root %>style.min.css": ["<%= config.dist.root %>style.min.css"],
+				"<%= config.dist.root %>promo/style.min.css": ["<%= config.dist.root %>style.min.css"],
 				"<%= config.dist.root %>free/style.min.css": ["<%= config.dist.root %>style.min.css"]
 			}
 		},
