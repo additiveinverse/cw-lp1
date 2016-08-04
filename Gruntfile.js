@@ -4,7 +4,8 @@ module.exports = function ( grunt ) {
 	var subs = {
 				"<%= config.dist.root %>index.html": "<%= config.app.tpl %>index.pug",
 				"<%= config.dist.root %>promo/index.html": "<%= config.app.tpl %>index-promo.pug",
-				"<%= config.dist.root %>free/index.html": "<%= config.app.tpl %>index-free.pug"
+				"<%= config.dist.root %>free/index.html": "<%= config.app.tpl %>index-free.pug",
+				"<%= config.dist.root %>fb/index.html": "<%= config.app.tpl %>index-facebook.pug"
 			}
 
 	grunt.initConfig( {
@@ -141,6 +142,7 @@ module.exports = function ( grunt ) {
 			files: {
 				"<%= config.dist.root %>index.html": "<%= config.dist.root %>index.html",
 				"<%= config.dist.root %>promo/index.html": "<%= config.dist.root %>promo/index.html",
+				"<%= config.dist.root %>fb/index.html": "<%= config.dist.root %>fb/index.html",
 				"<%= config.dist.root %>free/index.html": "<%= config.dist.root %>free/index.html"
 				}
 		}
