@@ -2,10 +2,10 @@ extends tpl-layout
 include tpl-tracking
 
 block vars
-	- var linkto = "http://get.netnanny.com/nn"
+	- var linkto = "http://get.netnanny.com/fb"
 	- var link_alt = "https://www.netnanny.com"
 	- var title = "How to Know Your Kids’ Internet Activity and Protect them from Online Dangers"
-	- var path = ""
+	- var path = "../"
 
 block content
 	p For parents who want to keep an eye on their children’s Internet activity and shield them from online dangers - there’s good news. #[a( href=link_alt ) Net Nanny], the #1 parental control software for more than 18 years, recently launched its #[a( href=linkto ) #[b  #[em Family Protection Pass ]]] - which blocks bad content such as pornography, and prevents harmful behavior including too much screen time, predators and cyberbullying. It works on PCs, Macs, iOS and Android devices.
@@ -42,7 +42,7 @@ block content
 
 
 block callout
-	img( src="img/callout.png").callout-image
+	img( src=path + "img/callout.png").callout-image
 
 block footer
 	p So no matter what age your child using the Internet or a smartphone is, consider how you might keep them protected from the dangers that being online can bring.  Net Nanny, with its powerful management tools and Smart Filtering,  is a pioneer and the #[a( href=linkto ) #[b most trusted]] online parental control software available. No matter the kind or number of computers and devices in your home, it may be right for you and your family.
